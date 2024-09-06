@@ -1,25 +1,26 @@
-# Raspi_onoff
+# Raspberry Pi Safe Shutdown using GPIO Pins
+
+## Overview
+This project provides a simple and reliable way to safely turn your Raspberry Pi on and off using GPIO pins, preventing data corruption and ensuring safe operation. It's compatible with any Raspberry Pi model, including the Raspberry Pi Zero 2W.
+
+![Safe Shutdown Schematic](./images/schematic.png)
+
+## Key Features
+- Safe shutdown using GPIO pins.
+- Optional LED indicator for power status.
+- Prevents data loss and system corruption.
+- Works with any GPIO pins on the Raspberry Pi.
+
+## Installation
+Follow these steps to modify the `config.txt` for safe shutdown:
+
+1. Open the `config.txt` file located in `/boot/`.
+2. Add the following lines:
+   ```bash
+   gpio=27=op,dl
+   dtoverlay=gpio-shutdown,gpio_pin=17,active_low="y"
 
 
-A simple way to power a Raspberry Pi on or off without data loss. 
-Any GPIOs can be used.
-
-![Logo](./images/schematic.png)
-
-The "Run" pin refers to the test pad on the back of the Zero 2W.
-
-The LED is optional but helpful for recognizing the power state (off or on).
-
-Only two small changes are needed in the config.txt:
-* Lock the Run/Reset pin while the operating system is running
-* Enable shutdown for power-off
-
-Initialization in config.txt in the boot directory:
-
-```
-gpio=27=op,dl 
-dtoverlay=gpio-shutdown,gpio_pin=17,active_low="y"
-```
 From the command line:
 ```shell
 
