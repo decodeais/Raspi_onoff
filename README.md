@@ -3,7 +3,7 @@
 ## Overview
 This project provides a simple and reliable way to safely turn your Raspberry Pi on and off using GPIO pins, preventing data corruption and ensuring safe operation. It's compatible with any Raspberry Pi model, including the Raspberry Pi Zero 2W.
 
-![Safe Shutdown Schematic](./images/schematic.png)
+![Safe Shutdown Schematic](./images/Schematic.png)
 
 ## Key Features
 - Safe shutdown using GPIO pins.
