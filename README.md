@@ -1,25 +1,33 @@
 # Raspi_onoff
-Einfache möglichkeit einen Raspberry Pi ohne Datenverlust ein bzw. auszuschalten.
-Es können Belibige GPIO's verwendet werden.
+
+
+A simple way to power a Raspberry Pi on or off without data loss. 
+Any GPIOs can be used.
 
 ![Logo](./images/schematic.png)
 
-Der pin "Run" ists der Testpad auf der rückseite des Zero 2W.
+The "Run" pin refers to the test pad on the back of the Zero 2W.
 
-Die Led ist optional aber hilfreich den zustand Power off bzw. Power on zu erkennen.
+The LED is optional but helpful for recognizing the power state (off or on).
 
-Es weden nur zwei kleine Änderungen in der config.txt benötigt:
+Only two small changes are needed in the config.txt:
+* Lock the Run/Reset pin while the operating system is running
+* Enable shutdown for power-off
 
-* Sperren des Run/Reset Pin während das Betriebssystem läuft
-* shutdown zum abschaltennzubaktivieren
- 
-Die Initialisierung in der config.txt im bootverzeichnis:
+Initialization in config.txt in the boot directory:
+
 ```
 gpio=27=op,dl 
 dtoverlay=gpio-shutdown,gpio_pin=17,active_low="y"
 ```
-
-Von der kommandozeile aus:
+From the command line:
 ```shell
+
 sudo sh -c 'echo "gpio=27=op,dl" >> /boot/firmware/config.txt'
 sudo sh -c 'echo "dtoverlay=gpio-shutdown,gpio_pin=17,active_low=\"y\"" >> /boot/firmware/config.txt'
+
+
+
+
+
+
