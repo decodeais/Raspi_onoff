@@ -1,7 +1,7 @@
 # Raspberry Pi GPIO Safe Shutdown and Wakeup Solution
 
 ## Overview
-This project provides a simple and reliable way to safely turn your Raspberry Pi on and off using GPIO pins, preventing data corruption and ensuring safe operation. It's compatible with any Raspberry Pi model, including the Raspberry Pi Zero 2W.
+This project provides a simple and reliable way to safely turn your Raspberry Pi on and off using GPIO pins and the run/reset pad at the backsite, preventing data corruption and ensuring safe operation. It's compatible with any Raspberry Pi model, including the Raspberry Pi Zero 2W.
 
 ![Safe Shutdown Schematic](./images/Schematic.png)
 
